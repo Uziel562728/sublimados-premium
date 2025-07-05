@@ -362,3 +362,17 @@ footer {
         align-items: center;
     }
 }
+.container {
+    position: relative; /* para que el logo se posicione relativo a este contenedor */
+}
+
+.logo {
+    position: absolute;
+    top: 10px;    /* distancia desde arriba, puedes ajustar */
+    right: 10px;  /* distancia desde la derecha, puedes ajustar */
+    height: 50px; /* tamaño del logo, ajusta si quieres */
+    width: auto;
+    cursor: pointer;
+    z-index: 10;
+}
+
