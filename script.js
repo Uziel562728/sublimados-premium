@@ -46,7 +46,12 @@ function startCarousel() {
     setInterval(nextSlide, 4000);
 }
 
-// Formulario y modal
+// Función para mostrar el modal de confirmación
+function cerrarModal() {
+    document.getElementById('miModal').style.display = 'none';
+}
+
+// Formulario y modal con fetch para evitar redirección
 function mostrarMensaje(event) {
     event.preventDefault();
 
@@ -61,20 +66,30 @@ function mostrarMensaje(event) {
         return false;
     }
 
-    // Mostrar modal inmediatamente
-    const modal = document.getElementById('miModal');
-    modal.style.display = 'block';
+    const form = event.target;
+    const data = new FormData(form);
 
-    // Enviar formulario después de un pequeño delay
-    setTimeout(() => {
-        document.getElementById('pedidoForm').submit();
-    }, 1000);
+    fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            const modal = document.getElementById('miModal');
+            modal.style.display = 'block';
+            form.reset();
+        } else {
+            alert("Hubo un problema al enviar el formulario. Intenta nuevamente.");
+        }
+    })
+    .catch(error => {
+        alert("Error de red: " + error.message);
+    });
 
     return false;
-}
-
-function cerrarModal() {
-    document.getElementById('miModal').style.display = 'none';
 }
 
 // Animaciones al hacer scroll
@@ -93,7 +108,7 @@ function observeElements() {
     });
 }
 
-// Inicializar todo
+// Inicializar todo al cargar la página
 window.onload = function() {
     createParticles();
     showSlide(0);
@@ -101,10 +116,11 @@ window.onload = function() {
     observeElements();
 };
 
-// Cerrar modal al hacer clic fuera
+// Cerrar modal al hacer clic fuera del contenido
 window.onclick = function(event) {
     const modal = document.getElementById('miModal');
     if (event.target === modal) {
         cerrarModal();
     }
 };
+
