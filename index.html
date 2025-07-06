@@ -148,6 +148,40 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+function actualizarTotal() {
+    const color = document.getElementById('color').value;
+    const cantidad = parseInt(document.getElementById('cantidad').value, 10);
+    const totalEl = document.getElementById('total');
+
+    if (!color || isNaN(cantidad) || cantidad <= 0) {
+        totalEl.textContent = "$0.00";
+        return;
+    }
+
+    let precioUnitario = 0;
+
+    switch (color) {
+        case "1":
+            precioUnitario = 10;
+            break;
+        case "2":
+            precioUnitario = 15;
+            break;
+        case "3":
+            precioUnitario = 20;
+            break;
+    }
+
+    const total = precioUnitario * cantidad;
+    totalEl.textContent = `$${total.toFixed(2)}`;
+}
+
+// Detectar cambios
+document.getElementById('color').addEventListener('change', actualizarTotal);
+document.getElementById('cantidad').addEventListener('input', actualizarTotal);
+</script>
+
 </body>
 </html>
 
