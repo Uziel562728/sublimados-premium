@@ -7,8 +7,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +19,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 /* Partículas animadas */
@@ -124,7 +125,6 @@ header .subtitle {
     }
 }
 
-
 /* Carrusel */
 .carousel {
     position: relative;
@@ -133,7 +133,8 @@ header .subtitle {
     margin: 2rem auto 4rem auto;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
 }
 
 .carousel img {
@@ -189,7 +190,7 @@ header .subtitle {
 .indicator {
     width: 12px;
     height: 12px;
-    background-color: #ccc;
+    background-color: #555;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -206,7 +207,7 @@ header .subtitle {
 
 .productos h2 {
     font-size: 2rem;
-    color: #222;
+    color: #eee;
     margin-bottom: 2rem;
 }
 
@@ -217,12 +218,13 @@ header .subtitle {
 }
 
 .camiseta {
-    background-color: #f9f9f9;
+    background-color: #2b2b2b;
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.8);
     transition: transform 0.3s ease;
+    color: #f0f0f0;
 }
 
 .camiseta:hover {
@@ -241,7 +243,7 @@ header .subtitle {
 }
 
 .camiseta small {
-    color: #555;
+    color: #bbb;
 }
 
 /* Formulario */
@@ -252,13 +254,15 @@ header .subtitle {
 .formulario h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #222;
+    color: #eee;
 }
 
 form fieldset {
-    border: 1px solid #ddd;
+    border: 1px solid #444;
     padding: 2rem;
     border-radius: 10px;
+    background-color: #2b2b2b;
+    color: #eee;
 }
 
 form legend {
@@ -276,7 +280,7 @@ form legend {
     display: block;
     margin-bottom: 0.4rem;
     font-weight: 600;
-    color: #333;
+    color: #ddd;
 }
 
 .form-group input,
@@ -285,9 +289,11 @@ form legend {
     width: 100%;
     padding: 0.6rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
     font-size: 1rem;
     resize: vertical;
+    background-color: #1a1a1a;
+    color: #eee;
 }
 
 form button {
@@ -314,13 +320,13 @@ form button:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     overflow: auto;
     padding-top: 100px;
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #2b2b2b;
     margin: 5% auto;
     padding: 2rem;
     border-radius: 10px;
@@ -328,7 +334,7 @@ form button:hover {
     max-width: 400px;
     text-align: center;
     color: #4caf50;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
 }
 
 .modal-content p {
@@ -347,17 +353,18 @@ form button:hover {
 }
 
 .close:hover {
-    color: #333;
+    color: #4caf50;
     transform: scale(1.2);
 }
 
 /* Footer */
 footer {
-    background: rgba(0,0,0,0.9);
-    color: white;
+    background: #1a1a1a;
+    color: #eee;
     padding: 3rem 0;
     text-align: center;
     margin-top: 3rem;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
 }
 
 .footer-content {
@@ -394,7 +401,7 @@ footer {
 .whatsapp-contact img {
     width: 30px;
     height: 30px;
-    /* filter: brightness(0) invert(1); /  / Quitar o comentar esta línea */
+    /* filter: brightness(0) invert(1); */ /* Quitar o comentar esta línea */
 }
 
 /* Responsive */
@@ -412,20 +419,4 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-}
-.container {
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 60px;
-    width: 60px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    z-index: 10;
 }
