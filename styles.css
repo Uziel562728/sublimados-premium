@@ -55,24 +55,75 @@ body {
     }
 }
 
-/* Header */
+/* Hero Header Mejorado */
 header {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: white;
+    padding: 4rem 1rem 6rem;
     text-align: center;
-    padding: 2rem 0;
     position: relative;
     z-index: 1;
+    border-bottom: 4px solid #4caf50;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 3rem;
-    color: #222;
+header h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.subtitle {
-    font-size: 1.5rem;
-    color: #4caf50;
-    margin-top: 0.5rem;
+header .subtitle {
+    font-size: 1.4rem;
+    color: #a5d6a7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
+
+/* Reubicar el logo en desktop y responsive */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive header */
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1rem 5rem;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        top: 15px;
+        left: 15px;
+        height: 55px;
+        width: 55px;
+    }
+}
+
 
 /* Carrusel */
 .carousel {
