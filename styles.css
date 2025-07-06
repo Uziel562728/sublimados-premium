@@ -262,6 +262,7 @@ form fieldset {
     padding: 2rem;
     border-radius: 10px;
     margin-top: 2rem; /* ← Esta línea es la que estás agregando */
+    margin: 1rem 0 1.5rem; /* ↑ Esto baja el legend un poco */
     background-color: #2b2b2b;
     color: #eee;
 }
